@@ -1,0 +1,19 @@
+.home-content {
+  margin-bottom: 74px;
+  gap: 140px;
+  h1 {
+    margin-bottom: 40px;
+  }
+  p:first-of-type {
+    margin-bottom: 40px;
+  }
+
+  p {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 300;
+    font-size: 22px;
+    letter-spacing: 0.33px;
+    line-height: 38px;
+    text-align: justify;
+  }
+}

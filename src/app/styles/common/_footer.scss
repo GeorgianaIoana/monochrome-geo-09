@@ -1,0 +1,200 @@
+//mobile version
+.footer {
+  //& = .footer(in cazul asta)
+  &-inner {
+    padding: 0;
+  }
+  &-nav {
+    background-color: $fourth-gray;
+    color: #fff;
+    padding: 30px 0;
+
+    &-inner > header {
+      margin-bottom: 30px;
+      h1 {
+        text-transform: uppercase;
+        font-size: 22px;
+        font-family: 'Playfair Display', sans-serif;
+      }
+    }
+
+    .nav-menu {
+      justify-content: center;
+      margin-bottom: 30px;
+      font-family: 'Roboto', sans-serif;
+
+      ul {
+        padding: 0 20px;
+      }
+      ul:first-child {
+        border-right: 2px solid #fff;
+      }
+    }
+    &-inner > footer {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+      align-items: center;
+
+      a {
+        font-size: 14px;
+        font-family: 'Roboto', sans-serif;
+        text-decoration: underline;
+        font-style: italic;
+      }
+    }
+  }
+  &-connect {
+    background: $brand-secondary;
+    padding: 30px 0;
+
+    &-inner {
+      .footer-newsletter {
+        margin-bottom: 30px;
+        align-items: center;
+
+        & > h1 {
+          margin-bottom: 20px;
+        }
+
+        input[type='email'] {
+          margin-bottom: 20px;
+          width: 70%;
+        }
+        input[type='email']::placeholder {
+          padding: 10px;
+          font-size: 14px;
+          color: $brand-primary;
+        }
+        button[type='submit'] {
+          padding: 4px 14px;
+          color: $brand-primary;
+          text-transform: uppercase;
+          border: 1px solid $brand-primary;
+          font-family: 'Roboto', sans-serif;
+        }
+        .agree-checkbox {
+          font-family: 'Roboto', sans-serif;
+          font-size: 14px;
+          display: flex;
+          justify-content: center;
+          padding: 0 40px;
+          margin-top: 20px;
+          align-items: flex-start;
+
+          a {
+            text-decoration: underline;
+          }
+
+          input[type='checkbox'] {
+            margin-top: 4px;
+          }
+        }
+      }
+
+      .footer-social {
+        font-size: 22px;
+
+        h1 {
+          margin-bottom: 24px;
+        }
+
+        ul {
+          font-size: 30px;
+          gap: 16px;
+        }
+      }
+    }
+  }
+} //mobile version end
+
+//desktop version
+@media (min-width: 992px) {
+  .footer {
+    background-color: $brand-secondary;
+    padding-top: 40px;
+    padding-bottom: 60px;
+    font-size: 22px;
+    line-height: 37px;
+
+    &-inner {
+      padding: 0 12px;
+      display: grid;
+      grid-template-areas: 'contact nav nav connect';
+      grid-template-rows: 1fr;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    &-contact {
+      grid-area: contact;
+    }
+
+    &-nav {
+      grid-area: nav;
+      background-color: transparent;
+      color: $brand-primary;
+      padding: 0;
+
+      &-inner {
+        padding: 0;
+      }
+      .nav-menu {
+        padding: 0;
+        margin-bottom: 0;
+        grid-template: 1fr / 1fr 1fr;
+        font-family: 'Playfair Display', sans-serif;
+        ul {
+          padding: 0;
+          text-align: start;
+        }
+        ul:first-child {
+          border-right: none;
+          grid-area: 1/ 2/ 2/3;
+        }
+      }
+    }
+    &-connect {
+      grid-area: connect;
+      padding: 0;
+
+      &-inner {
+        .footer-newsletter {
+          gap: 12px;
+          margin-bottom: 22px;
+          input[type='email'] {
+            margin-bottom: 0;
+            width: 100%;
+          }
+          input[type='email']::placeholder {
+            padding: 6px 20px;
+            font-size: 16px;
+            color: $third-gray;
+            font-style: italic;
+            content: 'Email address';
+          }
+          button[type='submit'] {
+            order: 1;
+            font-size: 16px;
+            line-height: 22px;
+          }
+          .agree-checkbox {
+            font-family: 'Roboto', sans-serif;
+            font-size: 16px;
+            display: flex;
+            justify-content: flex-start;
+            padding: 0;
+            margin-top: 0;
+            align-items: flex-start;
+            line-height: 22px;
+
+            input[type='checkbox'] {
+              margin-top: 4px;
+            }
+          }
+          .footer-social {
+          }
+        }
+      }
+    }
+  }
+}
